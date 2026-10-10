@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotels & Luxury Resorts in Sri Lanka - TravelGuide.lk</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+
+<body>
+
+  <!-- Website Header -->
+  <header class="top-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-container">
+        <div class="logo-badge">
+          <i class="fa-solid fa-plane-departure"></i>
+        </div>
+        <div class="logo-text">
+          Travel<span>Guide</span><span class="tld">.lk</span>
+        </div>
+      </a>
+
+      <button class="mobile-nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="hotels.html" class="active"><i class="fa-solid fa-hotel"></i> Hotels</a>
+        <a href="transport.html"><i class="fa-solid fa-car-side"></i> Transport</a>
+        <a href="food.html"><i class="fa-solid fa-utensils"></i> Food</a>
+        <a href="adventure.html"><i class="fa-solid fa-person-hiking"></i> Adventure</a>
+        <a href="plan-trip.html" class="nav-cta">Plan Your Trip</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="page-hero-badge">
+          <i class="fa-solid fa-star"></i> Handpicked Accommodations
+        </div>
+        <h1>Luxury Resorts & <span>Charming Villas</span></h1>
+        <p>From misty tea plantation bungalows in Nuwara Eliya to beachfront paradise villas in Bentota and Galle, find
+          your perfect island escape.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Filter & Search Section -->
+    <div class="filter-search-section">
+      <div class="filter-card">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="hotel-search" placeholder="Search by hotel name or city..." onkeyup="filterHotels()" />
+        </div>
+
+        <div class="filter-pills" id="category-filters">
+          <button class="filter-pill active" onclick="setCategory('all', this)">All Regions</button>
+          <button class="filter-pill" onclick="setCategory('beach', this)">🏖️ Coastal Beach</button>
+          <button class="filter-pill" onclick="setCategory('hills', this)">⛰️ Hill Country</button>
+          <button class="filter-pill" onclick="setCategory('heritage', this)">🏛️ Cultural Triangle</button>
+          <button class="filter-pill" onclick="setCategory('safari', this)">🐆 Safari & Nature</button>
+          <button class="filter-pill" onclick="setCategory('colombo', this)">🏙️ Colombo Urban</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotels Grid -->
+    <div class="card-grid" id="hotels-grid">
+
+      <!-- Card 1 -->
+      <div class="item-card" data-category="beach" data-name="cape weligama luxury resort">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+            alt="Cape Weligama Cliffside Resort" />
+          <div class="card-badge"><i class="fa-solid fa-crown"></i> 5-Star Luxury</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (520)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Weligama, Southern Coast</div>
+          <h3 class="card-title">Cape Weligama Luxury Resort</h3>
+          <p class="card-desc">Perched atop picturesque cliffs overlooking the Indian Ocean, offering private pool
+            residences, butler service, and world-class seafood dining.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-water-ladder"></i> Cliff Infinity Pool</span>
+            <span class="amenity-tag"><i class="fa-solid fa-spa"></i> Ayurvedic Spa</span>
+            <span class="amenity-tag"><i class="fa-solid fa-wifi"></i> Free High-Speed WiFi</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Starting From</span>
+              <span class="price-val">$380 <span>/ night</span></span>
+            </div>
+            <button class="btn-primary" onclick="openBookingModal('Cape Weligama Luxury Resort', 380)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="item-card" data-category="heritage" data-name="heritance kandalama eco resort dambulla">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+            alt="Heritance Kandalama Dambulla" />
+          <div class="card-badge"><i class="fa-solid fa-leaf"></i> Eco Architectural Icon</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.8 (840)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Dambulla, Cultural Triangle</div>
+          <h3 class="card-title">Heritance Kandalama</h3>
+          <p class="card-desc">Masterpiece created by legendary architect Geoffrey Bawa, built into a jungle cliff
+            facing the ancient Sigiriya Rock Fortress.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-mountain"></i> Sigiriya Rock View</span>
+            <span class="amenity-tag"><i class="fa-solid fa-utensils"></i> Cave Dining</span>
+            <span class="amenity-tag"><i class="fa-solid fa-person-hiking"></i> Guided Jungle Trails</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Starting From</span>
+              <span class="price-val">$220 <span>/ night</span></span>
+            </div>
+            <button class="btn-primary" onclick="openBookingModal('Heritance Kandalama', 220)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="item-card" data-category="hills" data-name="ceylon tea trails hatton bungalows">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
+            alt="Ceylon Tea Trails Hatton" />
+          <div class="card-badge"><i class="fa-solid fa-gem"></i> Relais & Châteaux</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 5.0 (310)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Hatton, Central Highlands</div>
+          <h3 class="card-title">Ceylon Tea Trails Bungalows</h3>
+          <p class="card-desc">Restored colonial tea planter bungalows nestled among emerald hills at 4,000 ft altitude
+            with roaring fireplaces and master gourmet chefs.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-mug-hot"></i> Gourmet Tea Tastings</span>
+            <span class="amenity-tag"><i class="fa-solid fa-fire"></i> Cozy Fireplaces</span>
+            <span class="amenity-tag"><i class="fa-solid fa-bell-concierge"></i> All-Inclusive Dining</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Starting From</span>
+              <span class="price-val">$450 <span>/ night</span></span>
+            </div>
+            <button class="btn-primary" onclick="openBookingModal('Ceylon Tea Trails', 450)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="item-card" data-category="hills" data-name="98 acres resort and spa ella">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80"
+            alt="98 Acres Resort Ella" />
+          <div class="card-badge"><i class="fa-solid fa-mountain-sun"></i> Mountain View</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (670)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Ella, Badulla District</div>
+          <h3 class="card-title">98 Acres Resort & Spa</h3>
+          <p class="card-desc">Spectacular eco-friendly resort chalets crafted from recycled timber overlooking the
+            iconic Ella Rock and Little Adam's Peak.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-bolt"></i> Mega Zipline Access</span>
+            <span class="amenity-tag"><i class="fa-solid fa-helicopter"></i> Helipad Onsite</span>
+            <span class="amenity-tag"><i class="fa-solid fa-cocktail"></i> Ravana Pool Club</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Starting From</span>
+              <span class="price-val">$240 <span>/ night</span></span>
+            </div>
+            <button class="btn-primary" onclick="openBookingModal('98 Acres Resort & Spa', 240)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="item-card" data-category="beach" data-name="anantara peace haven resort tangalle">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80"
+            alt="Anantara Peace Haven Tangalle" />
+          <div class="card-badge"><i class="fa-solid fa-umbrella-beach"></i> Private Cove</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (415)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Tangalle, Southern Province</div>
+          <h3 class="card-title">Anantara Peace Haven Tangalle</h3>
+          <p class="card-desc">A secluded coconut plantation haven fringed by golden beaches, featuring private plunge
+            pool villas and authentic Ayurvedic wellness.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-martini-glass-citrus"></i> Cliff-edge Italian Dining</span>
+            <span class="amenity-tag"><i class="fa-solid fa-spa"></i> Ayurvedic Sanctuary</span>
+            <span class="amenity-tag"><i class="fa-solid fa-bicycle"></i> Free Bicycle Rentals</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Starting From</span>
+              <span class="price-val">$320 <span>/ night</span></span>
+            </div>
+            <button class="btn-primary" onclick="openBookingModal('Anantara Peace Haven Tangalle', 320)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="item-card" data-category="safari" data-name="wild coast tented lodge yala national park">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80"
+            alt="Wild Coast Tented Safari Lodge Yala" />
+          <div class="card-badge"><i class="fa-solid fa-paw"></i> Wildlife Luxury</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (280)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Yala National Park, Ruhuna</div>
+          <h3 class="card-title">Wild Coast Tented Lodge</h3>
+          <p class="card-desc">Futuristic cocoon-like luxury tent suites situated where dry-zone jungle meets rugged
+            ocean, famous for Sri Lankan Leopard game safaris.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-truck-monster"></i> 4x4 Leopard Safaris</span>
+            <span class="amenity-tag"><i class="fa-solid fa-champagne-glasses"></i> All-Inclusive Bar</span>
+            <span class="amenity-tag"><i class="fa-solid fa-binoculars"></i> Expert Naturalists</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Starting From</span>
+              <span class="price-val">$520 <span>/ night</span></span>
+            </div>
+            <button class="btn-primary" onclick="openBookingModal('Wild Coast Tented Lodge', 520)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="item-card" data-category="heritage" data-name="galle fort hotel unesco">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80"
+            alt="Galle Fort Heritage Stay" />
+          <div class="card-badge"><i class="fa-solid fa-landmark"></i> UNESCO Fortress</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.8 (390)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Galle Dutch Fort, South</div>
+          <h3 class="card-title">Galle Fort Hotel</h3>
+          <p class="card-desc">An impeccably restored 18th-century Dutch mansion with grand colonnaded verandahs,
+            antique furniture, and a tranquil courtyard pool.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-person-walking"></i> Fort Walking Tours</span>
+            <span class="amenity-tag"><i class="fa-solid fa-wine-glass"></i> Heritage Cocktail Bar</span>
+            <span class="amenity-tag"><i class="fa-solid fa-sun"></i> Sunset Rampart Views</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Starting From</span>
+              <span class="price-val">$190 <span>/ night</span></span>
+            </div>
+            <button class="btn-primary" onclick="openBookingModal('Galle Fort Hotel', 190)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="item-card" data-category="colombo" data-name="cinnamon grand colombo luxury hotel">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80"
+            alt="Cinnamon Grand Colombo" />
+          <div class="card-badge"><i class="fa-solid fa-building"></i> City Center</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.7 (1,250)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Colombo 03, Western Province</div>
+          <h3 class="card-title">Cinnamon Grand Colombo</h3>
+          <p class="card-desc">Colombo's premier 5-star destination featuring 14 specialty restaurants, 2 outdoor
+            swimming pools, luxury shopping, and spa sanctuary.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-utensils"></i> 14 Dining Venues</span>
+            <span class="amenity-tag"><i class="fa-solid fa-bag-shopping"></i> Direct Mall Access</span>
+            <span class="amenity-tag"><i class="fa-solid fa-dumbbell"></i> Fitness & Wellness Club</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Starting From</span>
+              <span class="price-val">$140 <span>/ night</span></span>
+            </div>
+            <button class="btn-primary" onclick="openBookingModal('Cinnamon Grand Colombo', 140)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="booking-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeBookingModal()">&times;</button>
+      <h3 class="modal-title" id="modal-hotel-name">Reserve Your Stay</h3>
+      <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">Instant inquiry with best rate guarantee and free
+        cancellation.</p>
+
+      <form onsubmit="handleBookingSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" placeholder="e.g. John Doe" required />
+        </div>
+
+        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label class="form-label">Check-in Date</label>
+            <input type="date" class="form-control" required />
+          </div>
+          <div>
+            <label class="form-label">Check-out Date</label>
+            <input type="date" class="form-control" required />
+          </div>
+        </div>
+
+        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label class="form-label">Number of Guests</label>
+            <select class="form-control">
+              <option>1 Adult</option>
+              <option selected>2 Adults</option>
+              <option>2 Adults + 1 Child</option>
+              <option>Family (4+ Persons)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Room Category</label>
+            <select class="form-control">
+              <option>Deluxe Ocean View</option>
+              <option>Private Pool Villa</option>
+              <option>Heritage Suite</option>
+              <option>Executive Penthouse</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-control" placeholder="name@domain.com" required />
+        </div>
+
+        <button type="submit" class="btn-primary"
+          style="width: 100%; justify-content: center; padding: 13px; font-size: 15px; margin-top: 8px;">
+          Confirm Reservation Request <i class="fa-solid fa-check"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Standard Footer Component -->
+  <footer class="travel-footer" id="main-footer">
+    <!-- 1. CINEMATIC TROPICAL HERO PARALLAX BANNER -->
+    <div class="footer-hero-banner">
+      <div class="footer-hero-content">
+        <h2 class="footer-hero-title">Let us take you on a tropical adventure!</h2>
+        <a href="plan-trip.html" class="footer-hero-btn">
+          <span>Inquire Now</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. MAIN FOOTER CONTENT WITH VERTICAL DIVIDERS -->
+    <div class="footer-main-area">
+      <div class="travel-footer-container">
+        <div class="footer-grid-wrapper">
+
+          <!-- Column 1: Company Location & Contacts -->
+          <div class="footer-col">
+            <div class="footer-company-name">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>TravelGuide.lk (Pvt) Ltd,</span>
+            </div>
+            <p class="footer-address">
+              8A, Sir Ernest De Silva Mawatha,<br />
+              Colombo 7,<br />
+              Sri Lanka.
+            </p>
+
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+94112500611">(+94) 112 500 611 / (+94) 77 123 4567</a>
+            </div>
+
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@travelguide.lk">info@travelguide.lk</a>
+            </div>
+          </div>
+
+          <!-- Column 2: Navigation Links -->
+          <div class="footer-col">
+            <ul class="footer-nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="hotels.html">Island Life</a></li>
+              <li><a href="hotels.html">Destinations</a></li>
+              <li><a href="transport.html">Transport</a></li>
+              <li><a href="food.html">Ceylon Tales</a></li>
+              <li><a href="plan-trip.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Adventure & Outdoor Experiences -->
+          <div class="footer-col">
+            <ul class="footer-nav-list">
+              <li><a href="adventure.html" style="color: var(--ft-accent-cyan); font-weight: 700;">Adventure</a></li>
+              <li><a href="adventure.html?cat=diving">Diving</a></li>
+              <li><a href="adventure.html?cat=abseiling">Abseiling</a></li>
+              <li><a href="adventure.html?cat=paragliding">Paragliding</a></li>
+              <li><a href="adventure.html?cat=hiking">Hiking</a></li>
+              <li><a href="adventure.html?cat=rafting">Rafting</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter Subscription & Socials -->
+          <div class="footer-col">
+            <div class="footer-section-heading">Newsletter Subscription</div>
+            <p class="footer-newsletter-desc">
+              Get updates about new tours, travel tips, photo guides and more.
+            </p>
+
+            <form class="footer-inline-subscribe" onsubmit="handleNewsletterSubmit(event)">
+              <input type="email" class="footer-inline-input" placeholder="Your Email" required id="newsletter-email" />
+              <button type="submit" class="footer-inline-btn">
+                <span>Subscribe</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </form>
+
+            <div class="footer-follow-heading">Follow Us</div>
+            <div class="footer-social-circles">
+              <a href="#" class="footer-social-btn" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="footer-social-btn" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="footer-social-btn" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://wa.me/94771234567" class="footer-social-btn" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. BOTTOM SUB-FOOTER COPYRIGHT BAR -->
+    <div class="footer-bottom-bar">
+      <div class="travel-footer-container footer-bottom-inner">
+        <div class="footer-copy-text">
+          All copyrights reserved by TravelGuide.lk &mdash; &copy; 2026
+        </div>
+
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="sep">|</span>
+          <a href="#">Terms & Conditions</a>
+          <span class="sep">|</span>
+          <a href="#">GDPR Compliance</a>
+          <span class="sep">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Feedback Toast -->
+  <div class="toast-msg" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toast-text">Notification</span>
+  </div>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.getElementById('nav-links');
+      links.classList.toggle('show');
+    }
+
+    let activeCategory = 'all';
+
+    function setCategory(cat, btn) {
+      activeCategory = cat;
+      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterHotels();
+    }
+
+    function filterHotels() {
+      const search = document.getElementById('hotel-search').value.toLowerCase();
+      const cards = document.querySelectorAll('.item-card');
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const name = card.getAttribute('data-name');
+        const matchesCategory = (activeCategory === 'all' || category === activeCategory);
+        const matchesSearch = name.includes(search);
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openBookingModal(name, price) {
+      document.getElementById('modal-hotel-name').textContent = `Book: ${name} ($${price}/nt)`;
+      document.getElementById('booking-modal').classList.add('active');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('booking-modal').classList.remove('active');
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      closeBookingModal();
+      showToast('🎉 Reservation request submitted! Our concierge will email confirmation shortly.');
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+      if (email) {
+        showToast(`✨ Subscribed ${email} for 10% hotel discounts!`);
+        document.getElementById('newsletter-email').value = '';
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-text').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+  </script>
+</body>
+
+</html>

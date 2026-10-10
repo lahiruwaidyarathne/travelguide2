@@ -1,0 +1,484 @@
+/* ==========================================================================
+   TRAVELGUIDE.LK - CINEMATIC TROPICAL LUXURY FOOTER STYLES
+   Inspired by Premium Ceylon Tours Luxury Travel Aesthetics
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kaushan+Script&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --ft-bg-deep: #08162b;
+  --ft-bg-darker: #050e1c;
+  --ft-text: #cbd5e1;
+  --ft-text-light: #f8fafc;
+  --ft-text-muted: #8da2bc;
+  --ft-accent-blue: #0284c7;
+  --ft-accent-cyan: #38bdf8;
+  --ft-accent-gold: #f59e0b;
+  --ft-accent-green: #10b981;
+  --ft-border-blue: rgba(56, 189, 248, 0.22);
+  --ft-border-subtle: rgba(255, 255, 255, 0.08);
+  --ft-transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.travel-footer {
+  width: 100%;
+  background-color: var(--ft-bg-deep);
+  color: var(--ft-text);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13.5px;
+  line-height: 1.6;
+  position: relative;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.travel-footer * {
+  box-sizing: border-box;
+}
+
+.travel-footer a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--ft-transition);
+}
+
+.travel-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.travel-footer-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   1. CINEMATIC TROPICAL HERO BANNER
+   ========================================================================== */
+.footer-hero-banner {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  background-image: url('images/tropical-adventure.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 85px 24px 105px;
+  overflow: hidden;
+}
+
+/* Atmospheric mist and gradient fade into footer */
+.footer-hero-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 22, 43, 0.2) 0%,
+    rgba(8, 22, 43, 0.45) 40%,
+    rgba(8, 22, 43, 0.88) 82%,
+    #08162b 100%
+  );
+  pointer-events: none;
+}
+
+/* Ambient morning glow in center */
+.footer-hero-banner::after {
+  content: '';
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(254, 243, 199, 0.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.footer-hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+}
+
+.footer-hero-title {
+  font-family: 'Caveat', 'Kaushan Script', cursive;
+  font-size: 56px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.65), 0 2px 6px rgba(0, 0, 0, 0.85);
+}
+
+.footer-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(4, 13, 26, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.38);
+  color: #ffffff;
+  padding: 12px 34px;
+  border-radius: 50px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  backdrop-filter: blur(8px);
+  transition: var(--ft-transition);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+.footer-hero-btn:hover {
+  background: var(--ft-accent-blue);
+  border-color: var(--ft-accent-cyan);
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(2, 132, 199, 0.45);
+}
+
+.footer-hero-btn i {
+  font-size: 11px;
+  transition: transform 0.2s ease;
+}
+
+.footer-hero-btn:hover i {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   2. MAIN FOOTER GRID & COLUMNS
+   ========================================================================== */
+.footer-main-area {
+  padding: 40px 0 55px;
+  position: relative;
+  z-index: 2;
+  background-color: var(--ft-bg-deep);
+}
+
+.footer-grid-wrapper {
+  display: grid;
+  grid-template-columns: 1.8fr 1.05fr 1.15fr 2fr;
+  position: relative;
+}
+
+/* Vertical Dividers */
+.footer-col {
+  padding: 0 32px;
+  position: relative;
+}
+
+.footer-col:first-child {
+  padding-left: 0;
+}
+
+.footer-col:last-child {
+  padding-right: 0;
+}
+
+.footer-col:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  right: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--ft-border-blue) 15%,
+    var(--ft-border-blue) 85%,
+    transparent 100%
+  );
+}
+
+/* --------------------------------------------------------------------------
+   Col 1: Company Info & Contact
+   -------------------------------------------------------------------------- */
+.footer-company-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.footer-company-name i {
+  color: var(--ft-accent-cyan);
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.footer-address {
+  color: var(--ft-text-muted);
+  font-family: 'Outfit', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0 0 22px 25px;
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+.footer-contact-row i {
+  color: var(--ft-accent-cyan);
+  font-size: 14px;
+  width: 16px;
+  text-align: center;
+}
+
+.footer-contact-row a {
+  color: var(--ft-text);
+  font-weight: 500;
+}
+
+.footer-contact-row a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Col 2 & 3: Navigation Links
+   -------------------------------------------------------------------------- */
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-nav-list li a {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  display: inline-block;
+  transition: var(--ft-transition);
+}
+
+.footer-nav-list li a:hover {
+  color: var(--ft-accent-cyan);
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   Col 4: Newsletter Subscription & Socials
+   -------------------------------------------------------------------------- */
+.footer-section-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.footer-newsletter-desc {
+  color: var(--ft-text-muted);
+  font-size: 13px;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+/* Integrated Pill Search / Subscribe Input */
+.footer-inline-subscribe {
+  display: flex;
+  align-items: center;
+  background: rgba(4, 13, 26, 0.65);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 26px;
+  transition: var(--ft-transition);
+}
+
+.footer-inline-subscribe:focus-within {
+  border-color: var(--ft-accent-cyan);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.footer-inline-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 11px 16px;
+  color: #ffffff;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.footer-inline-input::placeholder {
+  color: #64748b;
+}
+
+.footer-inline-btn {
+  background: rgba(8, 22, 43, 0.95);
+  border: none;
+  border-left: 1px solid rgba(56, 189, 248, 0.3);
+  color: #ffffff;
+  padding: 11px 20px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: var(--ft-transition);
+}
+
+.footer-inline-btn:hover {
+  background: var(--ft-accent-blue);
+  color: #ffffff;
+}
+
+/* Follow Us Circles */
+.footer-follow-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.footer-social-circles {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 13.5px;
+  transition: var(--ft-transition);
+}
+
+.footer-social-btn:hover {
+  background: var(--ft-accent-cyan);
+  border-color: var(--ft-accent-cyan);
+  color: #040d1a;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(56, 189, 248, 0.35);
+}
+
+/* ==========================================================================
+   3. BOTTOM SUB-FOOTER COPYRIGHT BAR
+   ========================================================================== */
+.footer-bottom-bar {
+  background-color: var(--ft-bg-darker);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 20px 0;
+  font-size: 12px;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copy-text {
+  color: var(--ft-text-muted);
+  font-size: 12px;
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-links a {
+  color: var(--ft-text-muted);
+  font-size: 12px;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--ft-accent-cyan);
+}
+
+.footer-bottom-links .sep {
+  color: rgba(255, 255, 255, 0.15);
+  user-select: none;
+}
+
+/* ==========================================================================
+   4. RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .footer-grid-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .footer-col {
+    padding: 0;
+  }
+  .footer-col:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-hero-banner {
+    min-height: 290px;
+    padding: 60px 20px 75px;
+  }
+  .footer-hero-title {
+    font-size: 38px;
+  }
+  .footer-grid-wrapper {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .footer-bottom-links {
+    justify-content: center;
+    gap: 10px;
+  }
+}

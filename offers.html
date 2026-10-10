@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Special Travel Offers & Vacation Deals Sri Lanka - TravelGuide.lk</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+
+<body>
+
+  <!-- Website Header -->
+  <header class="top-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-container">
+        <div class="logo-badge">
+          <i class="fa-solid fa-plane-departure"></i>
+        </div>
+        <div class="logo-text">
+          Travel<span>Guide</span><span class="tld">.lk</span>
+        </div>
+      </a>
+
+      <button class="mobile-nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="hotels.html"><i class="fa-solid fa-hotel"></i> Hotels</a>
+        <a href="transport.html"><i class="fa-solid fa-car-side"></i> Transport</a>
+        <a href="food.html"><i class="fa-solid fa-utensils"></i> Food</a>
+        <a href="adventure.html"><i class="fa-solid fa-person-hiking"></i> Adventure</a>
+        <a href="plan-trip.html" class="nav-cta">Plan Your Trip</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="page-hero-badge">
+          <i class="fa-solid fa-fire"></i> Limited Time Promotions
+        </div>
+        <h1>Exclusive Sri Lanka <span>Travel Deals & Offers</span></h1>
+        <p>Save up to 40% on handcrafted holiday packages, seasonal honeymoon discounts, and early bird island escapes
+          with full flexibility.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Coupon Promo Bar -->
+    <div class="filter-search-section">
+      <div class="filter-card"
+        style="background: linear-gradient(135deg, #0284c7, #0369a1); color: white; border: none;">
+        <div style="flex: 1;">
+          <div
+            style="font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #bae6fd;">
+            Featured Promo Code</div>
+          <h3 style="font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 800; margin: 4px 0 6px;">
+            Get Instant Extra $100 OFF with code <span
+              style="background: rgba(255,255,255,0.2); padding: 2px 10px; border-radius: 6px; font-family: monospace; letter-spacing: 2px;">CEYLON2026</span>
+          </h3>
+          <p style="font-size: 13.5px; opacity: 0.9;">Valid on all multi-day private tour packages booked before end of
+            month.</p>
+        </div>
+        <button class="btn-primary" onclick="copyPromoCode('CEYLON2026')"
+          style="background: white; color: #0284c7; font-weight: 700;">
+          <i class="fa-regular fa-copy"></i> Copy Promo Code
+        </button>
+      </div>
+    </div>
+
+    <!-- Offers Grid -->
+    <div class="card-grid">
+
+      <!-- Card 1 -->
+      <div class="item-card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80"
+            alt="Sri Lanka Heritage and Beach Package" />
+          <div class="card-badge" style="background: #ef4444;"><i class="fa-solid fa-tag"></i> 30% OFF SALE</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (420)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-calendar-days"></i> 7 Days / 6 Nights &bull; Island Circuit
+          </div>
+          <h3 class="card-title">Classic Heritage & Golden Beaches Combo</h3>
+          <p class="card-desc">Complete guided tour covering Sigiriya Rock Fortress, Temple of the Tooth Kandy, Nuwara
+            Eliya tea hills, and 2 days relaxing on Bentota beach.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-car"></i> Private Chauffeur Included</span>
+            <span class="amenity-tag"><i class="fa-solid fa-hotel"></i> 4-Star Luxury Hotels</span>
+            <span class="amenity-tag"><i class="fa-solid fa-utensils"></i> Daily Breakfast & Dinners</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label" style="text-decoration: line-through; color: #94a3b8;">Was $999</span>
+              <span class="price-val" style="color: #059669;">$699 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openOfferModal('Classic Heritage & Beach 7-Day Combo', 699)">
+              Claim Deal <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="item-card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+            alt="Honeymoon Villa Sri Lanka" />
+          <div class="card-badge" style="background: #ec4899;"><i class="fa-solid fa-heart"></i> Honeymoon Special</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 5.0 (310)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-calendar-days"></i> 5 Days / 4 Nights &bull; Galle & Mirissa
+          </div>
+          <h3 class="card-title">Tropical Romance & Private Pool Villa</h3>
+          <p class="card-desc">Tailored for couples: 5-star cliffside villa with private plunge pool, daily champagne
+            breakfast, sunset catamaran cruise, and couple's Ayurvedic spa.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-champagne-glasses"></i> Free Champagne & Cake</span>
+            <span class="amenity-tag"><i class="fa-solid fa-spa"></i> 90-Min Couple's Spa</span>
+            <span class="amenity-tag"><i class="fa-solid fa-ship"></i> Private Sunset Yacht</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label" style="text-decoration: line-through; color: #94a3b8;">Was $1,150</span>
+              <span class="price-val" style="color: #059669;">$850 <span>/ couple</span></span>
+            </div>
+            <button class="btn-primary" onclick="openOfferModal('Tropical Romance Honeymoon Escape', 850)">
+              Claim Deal <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="item-card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=800&q=80"
+            alt="Yala Safari & Wildlife Sri Lanka" />
+          <div class="card-badge" style="background: #f59e0b;"><i class="fa-solid fa-paw"></i> Wildlife Bundle</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (530)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-calendar-days"></i> 4 Days / 3 Nights &bull; Yala & Mirissa
+          </div>
+          <h3 class="card-title">Yala Big-5 Leopard & Blue Whale Safari</h3>
+          <p class="card-desc">Encounter wild leopards, sloth bears, and elephants in Yala National Park, followed by a
+            premium morning whale watching expedition in Mirissa deep ocean.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-truck-monster"></i> 2x 4WD Safari Jeep Drives</span>
+            <span class="amenity-tag"><i class="fa-solid fa-ticket"></i> All Park Tickets Included</span>
+            <span class="amenity-tag"><i class="fa-solid fa-water"></i> Blue Whale Catamaran</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label" style="text-decoration: line-through; color: #94a3b8;">Was $600</span>
+              <span class="price-val" style="color: #059669;">$480 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openOfferModal('Yala Leopard & Blue Whale Bundle', 480)">
+              Claim Deal <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="item-card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80"
+            alt="Cultural Triangle Pass" />
+          <div class="card-badge" style="background: #8b5cf6;"><i class="fa-solid fa-landmark"></i> 35% OFF Heritage
+          </div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.8 (370)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-calendar-days"></i> 6 Days / 5 Nights &bull; UNESCO Sites
+          </div>
+          <h3 class="card-title">Ancient Kingdoms & Cultural Heritage Pass</h3>
+          <p class="card-desc">Immerse in 2,500 years of history. Explore Anuradhapura ruins, Polonnaruwa stone
+            sculptures, Sigiriya Lion Rock, and Dambulla golden cave temples.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-ticket"></i> All UNESCO Site Passes</span>
+            <span class="amenity-tag"><i class="fa-solid fa-person-hiking"></i> Certified English Historian</span>
+            <span class="amenity-tag"><i class="fa-solid fa-hotel"></i> Heritage Resort Stays</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label" style="text-decoration: line-through; color: #94a3b8;">Was $800</span>
+              <span class="price-val" style="color: #059669;">$520 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openOfferModal('Ancient Kingdoms Heritage Pass', 520)">
+              Claim Deal <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="item-card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80"
+            alt="Hill Country Scenic Train Retreat" />
+          <div class="card-badge" style="background: #0284c7;"><i class="fa-solid fa-mountain"></i> Hill Country</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (610)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-calendar-days"></i> 3 Days / 2 Nights &bull; Kandy & Ella
+          </div>
+          <h3 class="card-title">Tea Highlands & Scenic Train Weekend Retreat</h3>
+          <p class="card-desc">Escape to cool mountain breezes. Includes VIP first-class scenic train reservation, tea
+            factory master tour, Nine Arch bridge trek, and waterfalls.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-train"></i> 1st Class Train Tickets</span>
+            <span class="amenity-tag"><i class="fa-solid fa-mug-hot"></i> Tea Factory Tour & Tasting</span>
+            <span class="amenity-tag"><i class="fa-solid fa-waterfall"></i> Ravana Falls Excursion</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label" style="text-decoration: line-through; color: #94a3b8;">Was $360</span>
+              <span class="price-val" style="color: #059669;">$299 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openOfferModal('Tea Highlands Scenic Train Retreat', 299)">
+              Claim Deal <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="item-card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1588598198321-9735fd52455b?auto=format&fit=crop&w=800&q=80"
+            alt="10-Day All-Inclusive Island Circuit" />
+          <div class="card-badge" style="background: #10b981;"><i class="fa-solid fa-crown"></i> 40% OFF Early Bird
+          </div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 5.0 (820)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-calendar-days"></i> 10 Days / 9 Nights &bull; Grand Island
+            Tour</div>
+          <h3 class="card-title">Ultimate All-Inclusive Sri Lanka Grand Circuit</h3>
+          <p class="card-desc">The definitive Sri Lanka vacation: ancient cities, wildlife game drives, scenic hill
+            train, tea estates, Galle fort, Colombo city tour, and beach relaxation.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-check"></i> All-Inclusive Luxury Stays</span>
+            <span class="amenity-tag"><i class="fa-solid fa-plane"></i> Airport Transfers Included</span>
+            <span class="amenity-tag"><i class="fa-solid fa-shield-halved"></i> Free Cancellation Policy</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label" style="text-decoration: line-through; color: #94a3b8;">Was $1,980</span>
+              <span class="price-val" style="color: #059669;">$1,190 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openOfferModal('Ultimate 10-Day Grand Circuit', 1190)">
+              Claim Deal <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Offer Claim Modal -->
+  <div class="modal-overlay" id="booking-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeBookingModal()">&times;</button>
+      <h3 class="modal-title" id="modal-offer-name">Lock In Your Special Discount</h3>
+      <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">No deposit required today. Receive your
+        customized quotation and locked-in discount voucher.</p>
+
+      <form onsubmit="handleOfferSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" placeholder="e.g. David Miller" required />
+        </div>
+
+        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label class="form-label">Anticipated Travel Month</label>
+            <select class="form-control">
+              <option>This Month</option>
+              <option>Next Month</option>
+              <option selected>In 3-6 Months</option>
+              <option>Late 2026 / 2027</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Number of Travelers</label>
+            <select class="form-control">
+              <option>Solo Traveler</option>
+              <option selected>2 Persons (Couple)</option>
+              <option>Small Family (3-4)</option>
+              <option>Group (5+ Persons)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Promo Code Applied</label>
+          <input type="text" class="form-control" value="CEYLON2026 (Extra $100 OFF applied)" readonly
+            style="background: #f0fdf4; color: #166534; font-weight: 700;" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email Address for Quote & Voucher</label>
+          <input type="email" class="form-control" placeholder="name@domain.com" required />
+        </div>
+
+        <button type="submit" class="btn-primary"
+          style="width: 100%; justify-content: center; padding: 13px; font-size: 15px; margin-top: 8px;">
+          Lock In Discounted Price <i class="fa-solid fa-lock"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Standard Footer Component -->
+  <!-- Standard Footer Component -->
+  <footer class="travel-footer" id="main-footer">
+
+    <!-- 1. CINEMATIC TROPICAL HERO PARALLAX BANNER -->
+    <div class="footer-hero-banner">
+      <div class="footer-hero-content">
+        <h2 class="footer-hero-title">Let us take you on a tropical adventure!</h2>
+        <a href="plan-trip.html" class="footer-hero-btn">
+          <span>Inquire Now</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. MAIN FOOTER CONTENT WITH VERTICAL DIVIDERS -->
+    <div class="footer-main-area">
+      <div class="travel-footer-container">
+        <div class="footer-grid-wrapper">
+
+          <!-- Column 1: Company Location & Contacts -->
+          <div class="footer-col">
+            <div class="footer-company-name">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>TravelGuide.lk (Pvt) Ltd,</span>
+            </div>
+            <p class="footer-address">
+              8A, Sir Ernest De Silva Mawatha,<br />
+              Colombo 7,<br />
+              Sri Lanka.
+            </p>
+
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+94112500611">(+94) 112 500 611 / (+94) 77 123 4567</a>
+            </div>
+
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@travelguide.lk">info@travelguide.lk</a>
+            </div>
+          </div>
+
+          <!-- Column 2: Navigation Links -->
+          <div class="footer-col">
+            <ul class="footer-nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="hotels.html">Island Life</a></li>
+              <li><a href="hotels.html">Destinations</a></li>
+              <li><a href="transport.html">Transport</a></li>
+              <li><a href="food.html">Ceylon Tales</a></li>
+              <li><a href="plan-trip.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Adventure & Outdoor Experiences -->
+          <div class="footer-col">
+            <ul class="footer-nav-list">
+              <li><a href="adventure.html" style="color: var(--ft-accent-cyan); font-weight: 700;">Adventure</a></li>
+              <li><a href="adventure.html?cat=diving">Diving</a></li>
+              <li><a href="adventure.html?cat=abseiling">Abseiling</a></li>
+              <li><a href="adventure.html?cat=paragliding">Paragliding</a></li>
+              <li><a href="adventure.html?cat=hiking">Hiking</a></li>
+              <li><a href="adventure.html?cat=rafting">Rafting</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter Subscription & Socials -->
+          <div class="footer-col">
+            <div class="footer-section-heading">Newsletter Subscription</div>
+            <p class="footer-newsletter-desc">
+              Get updates about new tours, travel tips, photo guides and more.
+            </p>
+
+            <form class="footer-inline-subscribe" onsubmit="handleNewsletterSubmit(event)">
+              <input type="email" class="footer-inline-input" placeholder="Your Email" required id="newsletter-email" />
+              <button type="submit" class="footer-inline-btn">
+                <span>Subscribe</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </form>
+
+            <div class="footer-follow-heading">Follow Us</div>
+            <div class="footer-social-circles">
+              <a href="#" class="footer-social-btn" title="Facebook" aria-label="Facebook"><i
+                  class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="footer-social-btn" title="Instagram" aria-label="Instagram"><i
+                  class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="footer-social-btn" title="YouTube" aria-label="YouTube"><i
+                  class="fa-brands fa-youtube"></i></a>
+              <a href="https://wa.me/94771234567" class="footer-social-btn" title="WhatsApp" aria-label="WhatsApp"><i
+                  class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. BOTTOM SUB-FOOTER COPYRIGHT BAR -->
+    <div class="footer-bottom-bar">
+      <div class="travel-footer-container footer-bottom-inner">
+        <div class="footer-copy-text">
+          All copyrights reserved by TravelGuide.lk &mdash; &copy; 2026
+        </div>
+
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="sep">|</span>
+          <a href="#">Terms & Conditions</a>
+          <span class="sep">|</span>
+          <a href="#">GDPR Compliance</a>
+          <span class="sep">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toast-text">Notification</span>
+  </div>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.getElementById('nav-links');
+      links.classList.toggle('show');
+    }
+
+    function copyPromoCode(code) {
+      navigator.clipboard.writeText(code).then(() => {
+        showToast(`🎉 Promo code "${code}" copied to clipboard!`);
+      }).catch(() => {
+        showToast(`Use promo code: ${code}`);
+      });
+    }
+
+    function openOfferModal(name, price) {
+      document.getElementById('modal-offer-name').textContent = `Claim: ${name} ($${price})`;
+      document.getElementById('booking-modal').classList.add('active');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('booking-modal').classList.remove('active');
+    }
+
+    function handleOfferSubmit(e) {
+      e.preventDefault();
+      closeBookingModal();
+      showToast('🏷️ Offer locked! Your discounted custom itinerary quote has been generated and emailed.');
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+      if (email) {
+        showToast(`✨ Subscribed ${email} for exclusive travel deals!`);
+        document.getElementById('newsletter-email').value = '';
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-text').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+  </script>
+</body>
+
+</html>

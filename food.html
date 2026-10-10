@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food & Dining Experiences Sri Lanka - TravelGuide.lk</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+
+<body>
+
+  <!-- Website Header -->
+  <header class="top-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-container">
+        <div class="logo-badge">
+          <i class="fa-solid fa-plane-departure"></i>
+        </div>
+        <div class="logo-text">
+          Travel<span>Guide</span><span class="tld">.lk</span>
+        </div>
+      </a>
+
+      <button class="mobile-nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="hotels.html"><i class="fa-solid fa-hotel"></i> Hotels</a>
+        <a href="transport.html"><i class="fa-solid fa-car-side"></i> Transport</a>
+        <a href="food.html" class="active"><i class="fa-solid fa-utensils"></i> Food</a>
+        <a href="adventure.html"><i class="fa-solid fa-person-hiking"></i> Adventure</a>
+        <a href="plan-trip.html" class="nav-cta">Plan Your Trip</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="page-hero-badge">
+          <i class="fa-solid fa-pepper-hot"></i> Island Flavors & Spices
+        </div>
+        <h1>Sri Lankan Food & <span>Culinary Wonders</span></h1>
+        <p>From legendary Colombo crab dining and spicy street food night walks to aromatic spice garden cooking
+          masterclasses and colonial high tea.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Filter & Search Section -->
+    <div class="filter-search-section">
+      <div class="filter-card">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="food-search" placeholder="Search by cuisine, dish, or city..."
+            onkeyup="filterFood()" />
+        </div>
+
+        <div class="filter-pills" id="food-filters">
+          <button class="filter-pill active" onclick="setFoodCategory('all', this)">All Experiences</button>
+          <button class="filter-pill" onclick="setFoodCategory('seafood', this)">🦀 Fresh Seafood</button>
+          <button class="filter-pill" onclick="setFoodCategory('traditional', this)">🍛 Rice & Curry</button>
+          <button class="filter-pill" onclick="setFoodCategory('street', this)">🍢 Street Food Tours</button>
+          <button class="filter-pill" onclick="setFoodCategory('tea', this)">🫖 High Tea & Cafes</button>
+          <button class="filter-pill" onclick="setFoodCategory('class', this)">👨‍🍳 Cooking Classes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Food Experiences Grid -->
+    <div class="card-grid" id="food-grid">
+
+      <!-- Card 1 -->
+      <div class="item-card" data-category="seafood" data-name="ministry of crab colombo lagoon crab">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=800&q=80"
+            alt="Ministry of Crab Colombo Lagoon Seafood" />
+          <div class="card-badge"><i class="fa-solid fa-award"></i> Asia's 50 Best</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (2,100)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Old Dutch Hospital, Colombo 01</div>
+          <h3 class="card-title">Ministry of Crab & Giant Lagoon Crab</h3>
+          <p class="card-desc">Celebrated culinary temple dedicated to legendary Sri Lankan mud crabs, pepper crabs, and
+            jumbo garlic prawns in a historic 400-year-old hospital courtyard.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-circle-check"></i> Fresh Daily Catch</span>
+            <span class="amenity-tag"><i class="fa-solid fa-wine-glass"></i> Sommelier Wine Pairing</span>
+            <span class="amenity-tag"><i class="fa-solid fa-star"></i> Celebrity Chef Menu</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Average Dining</span>
+              <span class="price-val">$55 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openFoodModal('Ministry of Crab Colombo Table')">
+              Reserve Table <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="item-card" data-category="traditional" data-name="traditional village claypot curry banquet habarana">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80"
+            alt="Sri Lankan Claypot Rice and Curry" />
+          <div class="card-badge"><i class="fa-solid fa-fire"></i> Authentic Heritage</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 5.0 (890)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Habarana & Sigiriya Village</div>
+          <h3 class="card-title">Organic Claypot Village Banquet</h3>
+          <p class="card-desc">Experience 12 authentic clay-pot curries slow-cooked over woodfire in a thatched mud hut
+            by the lake. Served on fragrant banana leaves with coconut sambol.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-seedling"></i> 100% Farm-to-Table</span>
+            <span class="amenity-tag"><i class="fa-solid fa-bowl-rice"></i> Red Rice & Lotus Root</span>
+            <span class="amenity-tag"><i class="fa-solid fa-drumstick-bite"></i> Woodfire Jackfruit Curry</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">All-You-Can-Eat</span>
+              <span class="price-val">$18 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openFoodModal('Organic Village Banquet Experience')">
+              Book Experience <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="item-card" data-category="street" data-name="colombo street food night walk galle face kottu hoppers">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+            alt="Colombo Street Food Kottu" />
+          <div class="card-badge"><i class="fa-solid fa-bolt"></i> Local Favorite</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (1,150)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Galle Face Green & Aluthkade</div>
+          <h3 class="card-title">Colombo Midnight Street Food Safari</h3>
+          <p class="card-desc">A mouthwatering guided culinary walking tour through Colombo's bustling night food
+            stalls. Taste sizzling cheese kottu roti, egg hoppers, and icy faluda.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-person-walking"></i> Guided Local Foodie Guide</span>
+            <span class="amenity-tag"><i class="fa-solid fa-utensils"></i> 8+ Food Tastings</span>
+            <span class="amenity-tag"><i class="fa-solid fa-glass-water"></i> King Coconut Water Included</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Guided Tour</span>
+              <span class="price-val">$28 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openFoodModal('Colombo Street Food Safari')">
+              Join Safari <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="item-card" data-category="tea" data-name="high tea grand hotel nuwara eliya ceylon tea">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80"
+            alt="High Tea Grand Hotel Nuwara Eliya" />
+          <div class="card-badge"><i class="fa-solid fa-crown"></i> British Colonial Elegance</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.8 (640)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Nuwara Eliya "Little England"</div>
+          <h3 class="card-title">Grand Hotel Royal Ceylon High Tea</h3>
+          <p class="card-desc">Served on manicured Victorian lawns, savor warm butter scones with strawberry jam, smoked
+            salmon sandwiches, and single-origin Ceylon black tea infusions.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-mug-hot"></i> 18 Ceylon Tea Blends</span>
+            <span class="amenity-tag"><i class="fa-solid fa-cake-candles"></i> Artisanal Pastry Tier</span>
+            <span class="amenity-tag"><i class="fa-solid fa-tree"></i> Manicured Rose Gardens</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Afternoon Tea</span>
+              <span class="price-val">$22 <span>/ set</span></span>
+            </div>
+            <button class="btn-primary" onclick="openFoodModal('Grand Hotel Nuwara Eliya High Tea')">
+              Reserve High Tea <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="item-card" data-category="class" data-name="spice garden cooking class matale ceylon cinnamon">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80"
+            alt="Spice Garden Cooking Class" />
+          <div class="card-badge"><i class="fa-solid fa-graduation-cap"></i> Interactive Class</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (480)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Matale Organic Spice Gardens</div>
+          <h3 class="card-title">Cinnamon & Spice Cooking Masterclass</h3>
+          <p class="card-desc">Harvest fresh Ceylon cinnamon quills, lemongrass, and cloves from the garden, learn
+            traditional grinding techniques on stone, and cook your own 5-course feast.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-book-open"></i> Printed Recipe Booklet</span>
+            <span class="amenity-tag"><i class="fa-solid fa-gift"></i> Take-Home Ceylon Spice Jar</span>
+            <span class="amenity-tag"><i class="fa-solid fa-utensils"></i> Full 5-Course Lunch Feast</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Hands-on Class</span>
+              <span class="price-val">$35 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openFoodModal('Spice Garden Cooking Class')">
+              Book Class <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="item-card" data-category="seafood" data-name="galle fort sunset seafood ramparts lobster prawns">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80"
+            alt="Galle Fort Sunset Seafood Dining" />
+          <div class="card-badge"><i class="fa-solid fa-sun"></i> Sunset Dining</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (780)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Galle Fort Ocean Ramparts</div>
+          <h3 class="card-title">Galle Fort Rampart Seafood Grill</h3>
+          <p class="card-desc">Dine under tropical stars beside historic 17th-century ramparts with grilled butter
+            lobster, charcoal yellowfin tuna steaks, and tropical passion fruit cocktails.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-water"></i> Ocean Waves Soundscape</span>
+            <span class="amenity-tag"><i class="fa-solid fa-champagne-glasses"></i> Candlelight Atmosphere</span>
+            <span class="amenity-tag"><i class="fa-solid fa-fish"></i> Wild-Caught Reef Fish</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Seafood Platter</span>
+              <span class="price-val">$42 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openFoodModal('Galle Fort Sunset Seafood Grill')">
+              Reserve Table <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Table / Experience Booking Modal -->
+  <div class="modal-overlay" id="booking-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeBookingModal()">&times;</button>
+      <h3 class="modal-title" id="modal-food-name">Reserve Dining Experience</h3>
+      <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">Instant table reservation and dietary requests
+        accommodated.</p>
+
+      <form onsubmit="handleFoodSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" placeholder="e.g. Alex Morgan" required />
+        </div>
+
+        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label class="form-label">Reservation Date</label>
+            <input type="date" class="form-control" required />
+          </div>
+          <div>
+            <label class="form-label">Preferred Time Slot</label>
+            <select class="form-control">
+              <option>Lunch (12:30 PM)</option>
+              <option>Afternoon Tea (3:30 PM)</option>
+              <option selected>Sunset Dinner (6:30 PM)</option>
+              <option>Late Dinner (8:30 PM)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label class="form-label">Party Size</label>
+            <select class="form-control">
+              <option>Table for 1</option>
+              <option selected>Table for 2</option>
+              <option>Table for 4</option>
+              <option>Group of 6+</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Dietary Preference</label>
+            <select class="form-control">
+              <option>Standard / Seafood</option>
+              <option>Vegetarian / Vegan</option>
+              <option>Halal Friendly</option>
+              <option>Mild Spice Only</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email or Phone Number</label>
+          <input type="text" class="form-control" placeholder="yourname@domain.com" required />
+        </div>
+
+        <button type="submit" class="btn-primary"
+          style="width: 100%; justify-content: center; padding: 13px; font-size: 15px; margin-top: 8px;">
+          Confirm Dining Reservation <i class="fa-solid fa-check"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Standard Footer Component -->
+  <footer class="travel-footer" id="main-footer">
+
+    <!-- 1. CINEMATIC TROPICAL HERO PARALLAX BANNER -->
+    <div class="footer-hero-banner">
+      <div class="footer-hero-content">
+        <h2 class="footer-hero-title">Let us take you on a tropical adventure!</h2>
+        <a href="plan-trip.html" class="footer-hero-btn">
+          <span>Inquire Now</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. MAIN FOOTER CONTENT WITH VERTICAL DIVIDERS -->
+    <div class="footer-main-area">
+      <div class="travel-footer-container">
+        <div class="footer-grid-wrapper">
+
+          <!-- Column 1: Company Location & Contacts -->
+          <div class="footer-col">
+            <div class="footer-company-name">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>TravelGuide.lk (Pvt) Ltd,</span>
+            </div>
+            <p class="footer-address">
+              8A, Sir Ernest De Silva Mawatha,<br />
+              Colombo 7,<br />
+              Sri Lanka.
+            </p>
+
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+94112500611">(+94) 112 500 611 / (+94) 77 123 4567</a>
+            </div>
+
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@travelguide.lk">info@travelguide.lk</a>
+            </div>
+          </div>
+
+          <!-- Column 2: Navigation Links -->
+          <div class="footer-col">
+            <ul class="footer-nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="hotels.html">Island Life</a></li>
+              <li><a href="hotels.html">Destinations</a></li>
+              <li><a href="transport.html">Transport</a></li>
+              <li><a href="food.html">Ceylon Tales</a></li>
+              <li><a href="plan-trip.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Adventure & Outdoor Experiences -->
+          <div class="footer-col">
+            <ul class="footer-nav-list">
+              <li><a href="adventure.html" style="color: var(--ft-accent-cyan); font-weight: 700;">Adventure</a></li>
+              <li><a href="adventure.html?cat=diving">Diving</a></li>
+              <li><a href="adventure.html?cat=abseiling">Abseiling</a></li>
+              <li><a href="adventure.html?cat=paragliding">Paragliding</a></li>
+              <li><a href="adventure.html?cat=hiking">Hiking</a></li>
+              <li><a href="adventure.html?cat=rafting">Rafting</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter Subscription & Socials -->
+          <div class="footer-col">
+            <div class="footer-section-heading">Newsletter Subscription</div>
+            <p class="footer-newsletter-desc">
+              Get updates about new tours, travel tips, photo guides and more.
+            </p>
+
+            <form class="footer-inline-subscribe" onsubmit="handleNewsletterSubmit(event)">
+              <input type="email" class="footer-inline-input" placeholder="Your Email" required id="newsletter-email" />
+              <button type="submit" class="footer-inline-btn">
+                <span>Subscribe</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </form>
+
+            <div class="footer-follow-heading">Follow Us</div>
+            <div class="footer-social-circles">
+              <a href="#" class="footer-social-btn" title="Facebook" aria-label="Facebook"><i
+                  class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="footer-social-btn" title="Instagram" aria-label="Instagram"><i
+                  class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="footer-social-btn" title="YouTube" aria-label="YouTube"><i
+                  class="fa-brands fa-youtube"></i></a>
+              <a href="https://wa.me/94771234567" class="footer-social-btn" title="WhatsApp" aria-label="WhatsApp"><i
+                  class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. BOTTOM SUB-FOOTER COPYRIGHT BAR -->
+    <div class="footer-bottom-bar">
+      <div class="travel-footer-container footer-bottom-inner">
+        <div class="footer-copy-text">
+          All copyrights reserved by TravelGuide.lk &mdash; &copy; 2026
+        </div>
+
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="sep">|</span>
+          <a href="#">Terms & Conditions</a>
+          <span class="sep">|</span>
+          <a href="#">GDPR Compliance</a>
+          <span class="sep">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toast-text">Notification</span>
+  </div>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.getElementById('nav-links');
+      links.classList.toggle('show');
+    }
+
+    let activeFoodCat = 'all';
+
+    function setFoodCategory(cat, btn) {
+      activeFoodCat = cat;
+      document.querySelectorAll('#food-filters .filter-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterFood();
+    }
+
+    function filterFood() {
+      const search = document.getElementById('food-search').value.toLowerCase();
+      const cards = document.querySelectorAll('#food-grid .item-card');
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        const name = card.getAttribute('data-name');
+        const matchesCat = (activeFoodCat === 'all' || cat === activeFoodCat);
+        const matchesSearch = name.includes(search);
+
+        if (matchesCat && matchesSearch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openFoodModal(name) {
+      document.getElementById('modal-food-name').textContent = `Book: ${name}`;
+      document.getElementById('booking-modal').classList.add('active');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('booking-modal').classList.remove('active');
+    }
+
+    function handleFoodSubmit(e) {
+      e.preventDefault();
+      closeBookingModal();
+      showToast('🍽️ Dining reservation requested! Table confirmation sent via email & SMS.');
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+      if (email) {
+        showToast(`✨ Subscribed ${email} for exclusive dining perks!`);
+        document.getElementById('newsletter-email').value = '';
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-text').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+  </script>
+</body>
+
+</html>

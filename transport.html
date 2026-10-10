@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transport & Chauffeur Services Sri Lanka - TravelGuide.lk</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+
+<body>
+
+  <!-- Website Header -->
+  <header class="top-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-container">
+        <div class="logo-badge">
+          <i class="fa-solid fa-plane-departure"></i>
+        </div>
+        <div class="logo-text">
+          Travel<span>Guide</span><span class="tld">.lk</span>
+        </div>
+      </a>
+
+      <button class="mobile-nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="hotels.html"><i class="fa-solid fa-hotel"></i> Hotels</a>
+        <a href="transport.html" class="active"><i class="fa-solid fa-car-side"></i> Transport</a>
+        <a href="food.html"><i class="fa-solid fa-utensils"></i> Food</a>
+        <a href="adventure.html"><i class="fa-solid fa-person-hiking"></i> Adventure</a>
+        <a href="plan-trip.html" class="nav-cta">Plan Your Trip</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="page-hero-badge">
+          <i class="fa-solid fa-road"></i> Reliable Island Mobility
+        </div>
+        <h1>Chauffeur Cars, <span>Scenic Trains</span> & Transfers</h1>
+        <p>Travel Sri Lanka in effortless comfort with certified SLTDA tourist chauffeurs, luxury minivans, iconic
+          scenic train tickets, and seaplane flights.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Route Distance & Price Estimator Widget -->
+    <div class="filter-search-section">
+      <div class="filter-card" style="display: block;">
+        <h3 style="font-family: 'Outfit', sans-serif; font-size: 18px; margin-bottom: 14px; color: #0f172a;">
+          <i class="fa-solid fa-calculator" style="color: #0284c7;"></i> Quick Route & Travel Time Calculator
+        </h3>
+        <div class="calculator-grid">
+          <div class="calc-field">
+            <label class="form-label"><i class="fa-solid fa-location-dot" style="color: #0284c7;"></i> Starting
+              From</label>
+            <select class="form-control" id="calc-origin" onchange="calculateRoute()">
+              <option value="cmb">Bandaranaike Airport (CMB)</option>
+              <option value="colombo">Colombo City</option>
+              <option value="kandy">Kandy Hill Capital</option>
+              <option value="galle">Galle Fort</option>
+              <option value="bentota">Bentota Beach</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label class="form-label"><i class="fa-solid fa-map-pin" style="color: #ef4444;"></i> Destination</label>
+            <select class="form-control" id="calc-destination" onchange="calculateRoute()">
+              <option value="kandy">Kandy (Cultural Capital)</option>
+              <option value="ella">Ella (Tea Valleys)</option>
+              <option value="sigiriya">Sigiriya Rock</option>
+              <option value="galle">Galle Fort</option>
+              <option value="yala">Yala Safari Park</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label class="form-label"><i class="fa-solid fa-car-side" style="color: #059669;"></i> Vehicle Type</label>
+            <select class="form-control" id="calc-vehicle" onchange="calculateRoute()">
+              <option value="sedan">Comfort Sedan (1-3 Pax)</option>
+              <option value="van">Luxury Van (4-8 Pax)</option>
+              <option value="train">Scenic 1st Class Train</option>
+            </select>
+          </div>
+          <div class="calc-action">
+            <button class="btn-primary calc-submit-btn" onclick="calculateRoute()">
+              <i class="fa-solid fa-calculator"></i> Calculate
+            </button>
+          </div>
+        </div>
+
+        <div id="calc-result" class="calc-result-box">
+          <div>
+            <span style="font-weight: 700; color: #0f172a;" id="res-distance">Distance: 115 km</span> &bull;
+            <span style="color: #475569;" id="res-time">Approx Duration: 2.5 - 3 Hours</span>
+          </div>
+          <div style="font-size: 16px; font-weight: 800; color: #0284c7;" id="res-fare">
+            Estimated Cost: $65 USD (All Inclusive)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transport Options Grid -->
+    <div class="card-grid">
+
+      <!-- Card 1 -->
+      <div class="item-card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80"
+            alt="Private Tourist Sedan Sri Lanka" />
+          <div class="card-badge"><i class="fa-solid fa-car"></i> Most Popular</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (820)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-user-tie"></i> Dedicated Private Chauffeur</div>
+          <h3 class="card-title">Private Sedan & Tourist Chauffeur</h3>
+          <p class="card-desc">Ideal for couples and solo travelers. Air-conditioned modern Toyota Prius / Axio with an
+            English-fluent licensed guide driver.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-gas-pump"></i> Fuel & Highway Tolls Included</span>
+            <span class="amenity-tag"><i class="fa-solid fa-snowflake"></i> Climate Control AC</span>
+            <span class="amenity-tag"><i class="fa-solid fa-id-badge"></i> SLTDA Tourist Certified</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Daily Hire Rate</span>
+              <span class="price-val">$65 <span>/ day</span></span>
+            </div>
+            <button class="btn-primary" onclick="openTransportModal('Private Sedan Chauffeur', 65)">
+              Book Ride <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="item-card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80"
+            alt="Tourist Luxury Van Sri Lanka" />
+          <div class="card-badge"><i class="fa-solid fa-van-shuttle"></i> Family & Group</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (610)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-users"></i> Up to 8-10 Passengers</div>
+          <h3 class="card-title">Toyota KDH Luxury High-Roof Van</h3>
+          <p class="card-desc">Spacious reclining captain seats, large panoramic windows, ample luggage room for
+            suitcases, and onboard charging ports for group tours.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-suitcase-rolling"></i> Huge Luggage Capacity</span>
+            <span class="amenity-tag"><i class="fa-solid fa-wifi"></i> Onboard 4G Wi-Fi</span>
+            <span class="amenity-tag"><i class="fa-solid fa-shield"></i> Full Passenger Insurance</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Daily Hire Rate</span>
+              <span class="price-val">$95 <span>/ day</span></span>
+            </div>
+            <button class="btn-primary" onclick="openTransportModal('Toyota KDH High-Roof Van', 95)">
+              Book Ride <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="item-card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80"
+            alt="Kandy to Ella Scenic Train" />
+          <div class="card-badge"><i class="fa-solid fa-train"></i> Bucket List Experience</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 5.0 (1,490)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-mountain"></i> Kandy &bull; Nuwara Eliya &bull; Ella</div>
+          <h3 class="card-title">Scenic Hill Train 1st Class Reserved</h3>
+          <p class="card-desc">Voted world's most scenic train ride. Pass misty tea estates, tumbling waterfalls, and
+            cross over the legendary Nine Arch Bridge in Ella.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-chair"></i> Guaranteed Reserved Seats</span>
+            <span class="amenity-tag"><i class="fa-solid fa-camera"></i> Panoramic Observation Windows</span>
+            <span class="amenity-tag"><i class="fa-solid fa-ticket"></i> Hotel Ticket Delivery</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Per Ticket</span>
+              <span class="price-val">$25 <span>/ seat</span></span>
+            </div>
+            <button class="btn-primary" onclick="openTransportModal('Kandy to Ella 1st Class Train', 25)">
+              Reserve Ticket <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="item-card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80"
+            alt="Airport VIP Transfer Colombo" />
+          <div class="card-badge"><i class="fa-solid fa-plane-arrival"></i> 24/7 Service</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (980)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Bandaranaike Airport (CMB) &harr;
+            Island-wide</div>
+          <h3 class="card-title">Colombo Airport Express VIP Transfer</h3>
+          <p class="card-desc">Door-to-door express transfer. Driver waits with your nameboard at the arrival gate,
+            handles luggage, and drives via expressway.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-clock"></i> Free Flight Delay Tracking</span>
+            <span class="amenity-tag"><i class="fa-solid fa-road"></i> Highway Tolls Included</span>
+            <span class="amenity-tag"><i class="fa-solid fa-bottle-water"></i> Complimentary Mineral Water</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Flat Transfer Fare</span>
+              <span class="price-val">$35 <span>/ trip</span></span>
+            </div>
+            <button class="btn-primary" onclick="openTransportModal('Airport Express VIP Transfer', 35)">
+              Book Transfer <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="item-card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=800&q=80"
+            alt="Self-Drive Tuk Tuk Sri Lanka" />
+          <div class="card-badge"><i class="fa-solid fa-motorcycle"></i> Self Drive Adventure</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.8 (430)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-compass"></i> Island-wide Freedom</div>
+          <h3 class="card-title">Self-Drive Island Tuk-Tuk Rental</h3>
+          <p class="card-desc">Experience Sri Lanka like a true local. Complete with driving lessons, local driving
+            permit acquisition, spare tire, and phone mount.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-id-card"></i> Sri Lanka Driving Permit Help</span>
+            <span class="amenity-tag"><i class="fa-solid fa-graduation-cap"></i> 1-Hour Driving Lesson</span>
+            <span class="amenity-tag"><i class="fa-solid fa-wrench"></i> 24/7 Roadside Assistance</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Daily Rental</span>
+              <span class="price-val">$18 <span>/ day</span></span>
+            </div>
+            <button class="btn-primary" onclick="openTransportModal('Self-Drive Tuk Tuk Rental', 18)">
+              Rent Tuk-Tuk <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="item-card">
+        <div class="card-img-wrap">
+          <img src="images/seaplane.jpg" alt="Cinnamon Air Amphibious Scenic Seaplane Sri Lanka" />
+          <div class="card-badge"><i class="fa-solid fa-plane"></i> Luxury Aviation</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 5.0 (175)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-water"></i> Water Aerodromes & Lakes</div>
+          <h3 class="card-title">Cinnamon Air Scenic Seaplane Flights</h3>
+          <p class="card-desc">Cut down a 6-hour road drive to a scenic 35-minute aerial flight over coral reefs, lush
+            mountain reservoirs, and ancient cities.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-stopwatch"></i> Save 5+ Hours of Travel</span>
+            <span class="amenity-tag"><i class="fa-solid fa-camera-retro"></i> Aerial Island Photos</span>
+            <span class="amenity-tag"><i class="fa-solid fa-martini-glass"></i> VIP Lounge Access</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Flight Seat From</span>
+              <span class="price-val">$180 <span>/ flight</span></span>
+            </div>
+            <button class="btn-primary" onclick="openTransportModal('Cinnamon Air Seaplane', 180)">
+              Book Flight <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Transport Booking Modal -->
+  <div class="modal-overlay" id="booking-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeBookingModal()">&times;</button>
+      <h3 class="modal-title" id="modal-vehicle-name">Book Your Transport</h3>
+      <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">Instant confirmation with flexible pickup times
+        and flight tracking.</p>
+
+      <form onsubmit="handleTransportSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" placeholder="e.g. Sarah Jenkins" required />
+        </div>
+
+        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label class="form-label">Pickup Location / Hotel</label>
+            <input type="text" class="form-control" placeholder="e.g. CMB Airport or Galle" required />
+          </div>
+          <div>
+            <label class="form-label">Destination</label>
+            <input type="text" class="form-control" placeholder="e.g. Kandy or Ella" required />
+          </div>
+        </div>
+
+        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label class="form-label">Travel Date</label>
+            <input type="date" class="form-control" required />
+          </div>
+          <div>
+            <label class="form-label">Number of Passengers</label>
+            <select class="form-control">
+              <option>1-2 Passengers</option>
+              <option selected>3-4 Passengers</option>
+              <option>5-8 Passengers</option>
+              <option>9+ Group</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">WhatsApp or Email for Dispatch</label>
+          <input type="text" class="form-control" placeholder="+1 ... or email@domain.com" required />
+        </div>
+
+        <button type="submit" class="btn-primary"
+          style="width: 100%; justify-content: center; padding: 13px; font-size: 15px; margin-top: 8px;">
+          Confirm Ride Reservation <i class="fa-solid fa-check"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Standard Footer Component -->
+  <footer class="travel-footer" id="main-footer">
+
+    <!-- 1. CINEMATIC TROPICAL HERO PARALLAX BANNER -->
+    <div class="footer-hero-banner">
+      <div class="footer-hero-content">
+        <h2 class="footer-hero-title">Let us take you on a tropical adventure!</h2>
+        <a href="plan-trip.html" class="footer-hero-btn">
+          <span>Inquire Now</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. MAIN FOOTER CONTENT WITH VERTICAL DIVIDERS -->
+    <div class="footer-main-area">
+      <div class="travel-footer-container">
+        <div class="footer-grid-wrapper">
+
+          <!-- Column 1: Company Location & Contacts -->
+          <div class="footer-col">
+            <div class="footer-company-name">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>TravelGuide.lk (Pvt) Ltd,</span>
+            </div>
+            <p class="footer-address">
+              8A, Sir Ernest De Silva Mawatha,<br />
+              Colombo 7,<br />
+              Sri Lanka.
+            </p>
+
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+94112500611">(+94) 112 500 611 / (+94) 77 123 4567</a>
+            </div>
+
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@travelguide.lk">info@travelguide.lk</a>
+            </div>
+          </div>
+
+          <!-- Column 2: Navigation Links -->
+          <div class="footer-col">
+            <ul class="footer-nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="hotels.html">Island Life</a></li>
+              <li><a href="hotels.html">Destinations</a></li>
+              <li><a href="transport.html">Transport</a></li>
+              <li><a href="food.html">Ceylon Tales</a></li>
+              <li><a href="plan-trip.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Adventure & Outdoor Experiences -->
+          <div class="footer-col">
+            <ul class="footer-nav-list">
+              <li><a href="adventure.html" style="color: var(--ft-accent-cyan); font-weight: 700;">Adventure</a></li>
+              <li><a href="adventure.html?cat=diving">Diving</a></li>
+              <li><a href="adventure.html?cat=abseiling">Abseiling</a></li>
+              <li><a href="adventure.html?cat=paragliding">Paragliding</a></li>
+              <li><a href="adventure.html?cat=hiking">Hiking</a></li>
+              <li><a href="adventure.html?cat=rafting">Rafting</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter Subscription & Socials -->
+          <div class="footer-col">
+            <div class="footer-section-heading">Newsletter Subscription</div>
+            <p class="footer-newsletter-desc">
+              Get updates about new tours, travel tips, photo guides and more.
+            </p>
+
+            <form class="footer-inline-subscribe" onsubmit="handleNewsletterSubmit(event)">
+              <input type="email" class="footer-inline-input" placeholder="Your Email" required id="newsletter-email" />
+              <button type="submit" class="footer-inline-btn">
+                <span>Subscribe</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </form>
+
+            <div class="footer-follow-heading">Follow Us</div>
+            <div class="footer-social-circles">
+              <a href="#" class="footer-social-btn" title="Facebook" aria-label="Facebook"><i
+                  class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="footer-social-btn" title="Instagram" aria-label="Instagram"><i
+                  class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="footer-social-btn" title="YouTube" aria-label="YouTube"><i
+                  class="fa-brands fa-youtube"></i></a>
+              <a href="https://wa.me/94771234567" class="footer-social-btn" title="WhatsApp" aria-label="WhatsApp"><i
+                  class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. BOTTOM SUB-FOOTER COPYRIGHT BAR -->
+    <div class="footer-bottom-bar">
+      <div class="travel-footer-container footer-bottom-inner">
+        <div class="footer-copy-text">
+          All copyrights reserved by TravelGuide.lk &mdash; &copy; 2026
+        </div>
+
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="sep">|</span>
+          <a href="#">Terms & Conditions</a>
+          <span class="sep">|</span>
+          <a href="#">GDPR Compliance</a>
+          <span class="sep">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toast-text">Notification</span>
+  </div>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.getElementById('nav-links');
+      links.classList.toggle('show');
+    }
+
+    function calculateRoute() {
+      const origin = document.getElementById('calc-origin').value;
+      const dest = document.getElementById('calc-destination').value;
+      const vehicle = document.getElementById('calc-vehicle').value;
+
+      let distance = 120;
+      let time = "3.0 Hours";
+      let cost = 70;
+
+      if (origin === 'cmb' && dest === 'kandy') {
+        distance = 115; time = "2.5 - 3 Hours"; cost = vehicle === 'van' ? 95 : 65;
+      } else if (dest === 'ella') {
+        distance = 210; time = "5.5 Hours"; cost = vehicle === 'van' ? 140 : 110;
+      } else if (dest === 'galle') {
+        distance = 145; time = "2 Hours (via Southern Expressway)"; cost = vehicle === 'van' ? 85 : 55;
+      } else if (dest === 'sigiriya') {
+        distance = 160; time = "3.5 Hours"; cost = vehicle === 'van' ? 100 : 75;
+      } else if (dest === 'yala') {
+        distance = 260; time = "4.5 Hours"; cost = vehicle === 'van' ? 150 : 120;
+      }
+
+      if (vehicle === 'train') {
+        cost = 25;
+        time = "6.5 Scenic Hours (VIP Observation)";
+      }
+
+      document.getElementById('res-distance').textContent = `Distance: Approx ${distance} km`;
+      document.getElementById('res-time').textContent = `Duration: ${time}`;
+      document.getElementById('res-fare').textContent = `Estimated: $${cost} USD (All Inclusive)`;
+    }
+
+    function openTransportModal(name, price) {
+      document.getElementById('modal-vehicle-name').textContent = `Reserve: ${name}`;
+      document.getElementById('booking-modal').classList.add('active');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('booking-modal').classList.remove('active');
+    }
+
+    function handleTransportSubmit(e) {
+      e.preventDefault();
+      closeBookingModal();
+      showToast('🚗 Transport booking request confirmed! Driver assignment details sent to your contact.');
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+      if (email) {
+        showToast(`✨ Subscribed ${email} for exclusive transport offers!`);
+        document.getElementById('newsletter-email').value = '';
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-text').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+  </script>
+</body>
+
+</html>

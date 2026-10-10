@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelGuide.lk - Explore Sri Lanka & Tropical Adventures</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+
+<body>
+
+  <!-- Website Header -->
+  <header class="top-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-container">
+        <div class="logo-badge">
+          <i class="fa-solid fa-plane-departure"></i>
+        </div>
+        <div class="logo-text">
+          Travel<span>Guide</span><span class="tld">.lk</span>
+        </div>
+      </a>
+
+      <!-- Mobile Navigation Hamburger Toggle -->
+      <button class="mobile-nav-toggle" id="mobile-toggle" onclick="toggleMobileNav()"
+        aria-label="Toggle Navigation Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="hotels.html"><i class="fa-solid fa-hotel"></i> Hotels</a>
+        <a href="transport.html"><i class="fa-solid fa-car-side"></i> Transport</a>
+        <a href="food.html"><i class="fa-solid fa-utensils"></i> Food</a>
+        <a href="adventure.html"><i class="fa-solid fa-person-hiking"></i> Adventure</a>
+        <a href="plan-trip.html" class="nav-cta">Plan Your Trip</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Showcase Content -->
+  <main class="page-preview container">
+
+    <!-- Introductory Sri Lanka Tour Description Box -->
+    <div class="intro-text-box">
+      <p>
+        <strong>Book this tailor made family tour package to Sri Lanka.</strong> Explore this land of sandy beaches,
+        emerald landscapes and flourishing culture.
+      </p>
+      <p>
+        On your family holiday to Sri Lanka, visit the best attractions like Pinnawala Elephant Orphanage and Temple of
+        the Tooth Relic.
+        Further on your guided Sri Lanka family tour, visit the magnificent Peradeniya Botanical Gardens and explore the
+        glittering beaches of Bentota.
+      </p>
+      <p>
+        This Sri Lanka tour is equipped with world-class comforts, lavish stays, and courteous services that let you
+        explore this isle in a hassle free manner.
+        Find friendly family packages from Chennai, Bangalore, Mumbai, Delhi and other prominent cities that have been
+        designed to suit all your needs and demands.
+        Avail this Sri Lanka tour package to have a memorable experience.
+      </p>
+    </div>
+
+    <!-- Gallery Matching Destination Experiences -->
+    <div class="gallery-grid">
+      <!-- 1. Snorkeling & Sea Turtles -->
+      <div class="gallery-card g-col-4">
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+          alt="Snorkeling with Sea Turtles in Hikkaduwa" />
+        <div class="card-caption">
+          <h4>Turtle Snorkeling</h4>
+          <p>Hikkaduwa & Mirissa Marine Sanctuaries</p>
+        </div>
+      </div>
+
+      <!-- 2. Galle Lighthouse -->
+      <div class="gallery-card g-col-4">
+        <img src="https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=800&q=80"
+          alt="Galle Fort Lighthouse Sri Lanka" />
+        <div class="card-caption">
+          <h4>Galle Lighthouse</h4>
+          <p>UNESCO World Heritage Dutch Fort</p>
+        </div>
+      </div>
+
+      <!-- 3. Temple of the Tooth / Kandy -->
+      <div class="gallery-card g-col-4">
+        <img src="https://images.unsplash.com/photo-1588598198321-9735fd52455b?auto=format&fit=crop&w=800&q=80"
+          alt="Temple of the Sacred Tooth Relic Kandy" />
+        <div class="card-caption">
+          <h4>Temple of the Tooth</h4>
+          <p>Historic Sacred City of Kandy</p>
+        </div>
+      </div>
+
+      <!-- 4. Tropical Golden Beaches & Palm Trees -->
+      <div class="gallery-card g-col-6">
+        <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1000&q=80"
+          alt="Mirissa & Bentota Golden Sand Beaches" />
+        <div class="card-caption">
+          <h4>Bentota & Mirissa Coast</h4>
+          <p>Golden sandy beaches and palm-fringed coastlines</p>
+        </div>
+      </div>
+
+      <!-- 5. Sigiriya Rock Fortress -->
+      <div class="gallery-card g-col-6">
+        <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1000&q=80"
+          alt="Sigiriya Lion Rock Fortress Aerial" />
+        <div class="card-caption">
+          <h4>Sigiriya Rock Fortress</h4>
+          <p>The 8th Wonder of the World in emerald jungle</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ==========================================================================
+       CINEMATIC TROPICAL LUXURY FOOTER (Inspired by Ceylon Tours)
+       ========================================================================== -->
+  <footer class="travel-footer" id="main-footer">
+
+    <!-- 1. CINEMATIC TROPICAL HERO PARALLAX BANNER -->
+    <div class="footer-hero-banner">
+      <div class="footer-hero-content">
+        <h2 class="footer-hero-title">Let us take you on a tropical adventure!</h2>
+        <a href="plan-trip.html" class="footer-hero-btn">
+          <span>Inquire Now</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. MAIN FOOTER CONTENT WITH VERTICAL DIVIDERS -->
+    <div class="footer-main-area">
+      <div class="travel-footer-container">
+        <div class="footer-grid-wrapper">
+
+          <!-- Column 1: Company Location & Contacts -->
+          <div class="footer-col">
+            <div class="footer-company-name">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>TravelGuide.lk (Pvt) Ltd,</span>
+            </div>
+            <p class="footer-address">
+              8A, Sir Ernest De Silva Mawatha,<br />
+              Colombo 7,<br />
+              Sri Lanka.
+            </p>
+
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+94112500611">(+94) 112 500 611 / (+94) 77 123 4567</a>
+            </div>
+
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@travelguide.lk">info@travelguide.lk</a>
+            </div>
+          </div>
+
+          <!-- Column 2: Navigation Links -->
+          <div class="footer-col">
+            <ul class="footer-nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="hotels.html">Island Life</a></li>
+              <li><a href="hotels.html">Destinations</a></li>
+              <li><a href="transport.html">Transport</a></li>
+              <li><a href="food.html">Ceylon Tales</a></li>
+              <li><a href="plan-trip.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Adventure & Outdoor Experiences -->
+          <div class="footer-col">
+            <ul class="footer-nav-list">
+              <li><a href="adventure.html" style="color: var(--ft-accent-cyan); font-weight: 700;">Adventure</a></li>
+              <li><a href="adventure.html?cat=diving">Diving</a></li>
+              <li><a href="adventure.html?cat=abseiling">Abseiling</a></li>
+              <li><a href="adventure.html?cat=paragliding">Paragliding</a></li>
+              <li><a href="adventure.html?cat=hiking">Hiking</a></li>
+              <li><a href="adventure.html?cat=rafting">Rafting</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter Subscription & Socials -->
+          <div class="footer-col">
+            <div class="footer-section-heading">Newsletter Subscription</div>
+            <p class="footer-newsletter-desc">
+              Get updates about new tours, travel tips, photo guides and more.
+            </p>
+
+            <form class="footer-inline-subscribe" onsubmit="handleNewsletterSubmit(event)">
+              <input type="email" class="footer-inline-input" placeholder="Your Email" required id="newsletter-email" />
+              <button type="submit" class="footer-inline-btn">
+                <span>Subscribe</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </form>
+
+            <div class="footer-follow-heading">Follow Us</div>
+            <div class="footer-social-circles">
+              <a href="#" class="footer-social-btn" title="Facebook" aria-label="Facebook"><i
+                  class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="footer-social-btn" title="Instagram" aria-label="Instagram"><i
+                  class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="footer-social-btn" title="YouTube" aria-label="YouTube"><i
+                  class="fa-brands fa-youtube"></i></a>
+              <a href="https://wa.me/94771234567" class="footer-social-btn" title="WhatsApp" aria-label="WhatsApp"><i
+                  class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. BOTTOM SUB-FOOTER COPYRIGHT BAR -->
+    <div class="footer-bottom-bar">
+      <div class="travel-footer-container footer-bottom-inner">
+        <div class="footer-copy-text">
+          All copyrights reserved by TravelGuide.lk &mdash; &copy; 2026
+        </div>
+
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="sep">|</span>
+          <a href="#">Terms & Conditions</a>
+          <span class="sep">|</span>
+          <a href="#">GDPR Compliance</a>
+          <span class="sep">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Feedback Toast Notification -->
+  <div class="toast-msg" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toast-text">Thank you for subscribing!</span>
+  </div>
+
+  <script>
+    // Toggle Mobile Navigation Drawer
+    function toggleMobileNav() {
+      const navLinks = document.getElementById('nav-links');
+      if (navLinks) {
+        navLinks.classList.toggle('show');
+      }
+    }
+
+    // Interactive Newsletter Submit with toast feedback
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+      if (!email) return;
+
+      showToast(`✨ Success! Subscribed ${email} for exclusive travel updates.`);
+      document.getElementById('newsletter-email').value = '';
+    }
+
+    // Show toast helper
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      toastText.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+  </script>
+
+</body>
+
+</html>

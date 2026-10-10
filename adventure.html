@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adventures & Outdoor Thrills Sri Lanka - TravelGuide.lk</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+
+<body>
+
+  <!-- Website Header -->
+  <header class="top-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-container">
+        <div class="logo-badge">
+          <i class="fa-solid fa-plane-departure"></i>
+        </div>
+        <div class="logo-text">
+          Travel<span>Guide</span><span class="tld">.lk</span>
+        </div>
+      </a>
+
+      <button class="mobile-nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="hotels.html"><i class="fa-solid fa-hotel"></i> Hotels</a>
+        <a href="transport.html"><i class="fa-solid fa-car-side"></i> Transport</a>
+        <a href="food.html"><i class="fa-solid fa-utensils"></i> Food</a>
+        <a href="adventure.html" class="active"><i class="fa-solid fa-person-hiking"></i> Adventure</a>
+        <a href="plan-trip.html" class="nav-cta">Plan Your Trip</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="page-hero-badge">
+          <i class="fa-solid fa-compass"></i> Extreme Nature & Adrenaline
+        </div>
+        <h1>Wild Adventures & <span>Outdoor Thrills</span></h1>
+        <p>Unleash your inner explorer across Sri Lanka's roaring rivers, vertical misty waterfalls, rugged mountain peaks, vibrant coral reefs, and open skies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Filter & Search Section -->
+    <div class="filter-search-section">
+      <div class="filter-card">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="adv-search" placeholder="Search by adventure type, peak, or location..."
+            onkeyup="filterAdventures()" />
+        </div>
+
+        <div class="filter-pills" id="adv-filters">
+          <button class="filter-pill active" onclick="setAdvCategory('all', this)">All Adventures</button>
+          <button class="filter-pill" onclick="setAdvCategory('diving', this)">🤿 Diving</button>
+          <button class="filter-pill" onclick="setAdvCategory('abseiling', this)">🧗 Abseiling</button>
+          <button class="filter-pill" onclick="setAdvCategory('paragliding', this)">🪂 Paragliding</button>
+          <button class="filter-pill" onclick="setAdvCategory('hiking', this)">🥾 Hiking</button>
+          <button class="filter-pill" onclick="setAdvCategory('rafting', this)">🚣 Rafting</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Adventure Experiences Grid -->
+    <div class="card-grid" id="adventure-grid">
+
+      <!-- 1. Diving -->
+      <div class="item-card" data-category="diving" data-name="scuba diving pigeon island trincomalee coral reef marine park">
+        <div class="card-img-wrap">
+          <img src="images/diving.jpg"
+            alt="Pigeon Island Scuba Diving & Coral Reef" />
+          <div class="card-badge" style="background: #0284c7;"><i class="fa-solid fa-mask-ventilator"></i> PADI Certified</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (512)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Pigeon Island National Park, Trincomalee</div>
+          <h3 class="card-title">Pigeon Island Coral Reef & Turtle Scuba Dive</h3>
+          <p class="card-desc">Explore crystal turquoise waters teeming with live coral reefs, blacktip reef sharks, green sea turtles, and colorful schools of tropical fish.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-clock"></i> 3.5 Hours</span>
+            <span class="amenity-tag"><i class="fa-solid fa-award"></i> Equipment Included</span>
+            <span class="amenity-tag"><i class="fa-solid fa-shield"></i> PADI Master Instructor</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Per Explorer</span>
+              <span class="price-val">$75 <span>/ session</span></span>
+            </div>
+            <button class="btn-primary" onclick="openAdvModal('Pigeon Island Coral Reef Scuba Dive', 75)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Abseiling -->
+      <div class="item-card" data-category="abseiling" data-name="waterfall abseiling kitulgala sandun ella cascade canyoning">
+        <div class="card-img-wrap">
+          <img src="images/abseiling.jpg"
+            alt="Waterfall Abseiling in Kitulgala" />
+          <div class="card-badge" style="background: #e11d48;"><i class="fa-solid fa-bolt"></i> High Adrenaline</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 5.0 (380)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Sandun Ella Waterfall, Kitulgala</div>
+          <h3 class="card-title">Waterfall Abseiling & Canyon Descent</h3>
+          <p class="card-desc">Rappel down a thundering 105-foot rock waterfall face in Kitulgala's tropical rainforest. Features professional UIAA certified harness gear and backup belay.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-clock"></i> 2.5 Hours</span>
+            <span class="amenity-tag"><i class="fa-solid fa-vest"></i> Safety Harness & Helmet</span>
+            <span class="amenity-tag"><i class="fa-solid fa-camera"></i> Free GoPro Video</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Per Adventurer</span>
+              <span class="price-val">$55 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openAdvModal('Waterfall Abseiling & Canyon Descent', 55)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Paragliding -->
+      <div class="item-card" data-category="paragliding" data-name="tandem paragliding ella gap mountains thermal soaring">
+        <div class="card-img-wrap">
+          <img src="images/paragliding.jpg" style="object-position: top center;"
+            alt="Paragliding over Ella Gap Sri Lanka" />
+          <div class="card-badge" style="background: #0284c7;"><i class="fa-solid fa-wind"></i> Epic Views</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (290)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Ella Gap, Uva Province</div>
+          <h3 class="card-title">Tandem Mountain Paragliding over Ella Gap</h3>
+          <p class="card-desc">Soar high above emerald tea terraces, misty ravines, and waterfalls with a licensed international tandem flight pilot. Experience total freedom and panoramic views.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-clock"></i> 20-30 Mins Flight</span>
+            <span class="amenity-tag"><i class="fa-solid fa-user-shield"></i> Licensed Flight Pilot</span>
+            <span class="amenity-tag"><i class="fa-solid fa-video"></i> 4K Action Cam Footage</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">All Inclusive</span>
+              <span class="price-val">$120 <span>/ flight</span></span>
+            </div>
+            <button class="btn-primary" onclick="openAdvModal('Tandem Paragliding Flight - Ella Gap', 120)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Hiking -->
+      <div class="item-card" data-category="hiking" data-name="knuckles mountain range cloud forest trek hiking peaks">
+        <div class="card-img-wrap">
+          <img src="images/hiking.jpg"
+            alt="Knuckles Mountain Range Cloud Forest Trekking" />
+          <div class="card-badge" style="background: #059669;"><i class="fa-solid fa-mountain"></i> UNESCO Trail</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 5.0 (640)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Knuckles Conservation Range, Matale</div>
+          <h3 class="card-title">Knuckles Cloud Forest 5-Peaks Trek</h3>
+          <p class="card-desc">Guided high-altitude trek across 34 endemic bird habitats, hidden mountain waterfalls, pygmy forests, and dramatic cliff edges overlooking the valley.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-route"></i> 14 km Circuit</span>
+            <span class="amenity-tag"><i class="fa-solid fa-person-walking"></i> Native Trekking Guide</span>
+            <span class="amenity-tag"><i class="fa-solid fa-utensils"></i> Packed Island Picnic</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Full Day</span>
+              <span class="price-val">$45 <span>/ trekker</span></span>
+            </div>
+            <button class="btn-primary" onclick="openAdvModal('Knuckles 5-Peaks Cloud Forest Trek', 45)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Rafting -->
+      <div class="item-card" data-category="rafting" data-name="white water rafting kitulgala kelani river grade 3 rapids">
+        <div class="card-img-wrap">
+          <img src="images/rafting.jpg"
+            alt="White Water Rafting Kitulgala Kelani River" />
+          <div class="card-badge" style="background: #0284c7;"><i class="fa-solid fa-water"></i> Grade 3+ Rapids</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (820)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Kelani River Rapids, Kitulgala</div>
+          <h3 class="card-title">Kitulgala White Water Rafting Expedition</h3>
+          <p class="card-desc">Conquer 7 exhilarating white-water rapids including 'Head Chopper', 'Virgin's Breast', and 'Butter Crunch' surrounded by primeval rainforest filming sets.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-water"></i> 5 km Rapids Run</span>
+            <span class="amenity-tag"><i class="fa-solid fa-life-ring"></i> USCG Certified Vests</span>
+            <span class="amenity-tag"><i class="fa-solid fa-person-swimming"></i> Natural River Jump</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Per Rafter</span>
+              <span class="price-val">$35 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openAdvModal('Kitulgala White Water Rafting Expedition', 35)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Diving - Shipwrecks & Whale Sharks -->
+      <div class="item-card" data-category="diving" data-name="shipwreck diving hikkaduwa ss conch deep sea marine dive">
+        <div class="card-img-wrap">
+          <img src="images/shipwreck-dive.jpg"
+            alt="Hikkaduwa Shipwreck Deep Scuba Dive" />
+          <div class="card-badge" style="background: #6366f1;"><i class="fa-solid fa-anchor"></i> Historic Wreck</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.8 (210)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Southern Coastline, Hikkaduwa</div>
+          <h3 class="card-title">Historic Shipwreck & Deep Coral Reef Dive</h3>
+          <p class="card-desc">Descend to 28 meters to explore the historic 1903 SS Conch oil tanker wreck, now transformed into an artificial sanctuary for giant moray eels and lionfish.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-anchor"></i> 28m Max Depth</span>
+            <span class="amenity-tag"><i class="fa-solid fa-certificate"></i> Advanced Open Water</span>
+            <span class="amenity-tag"><i class="fa-solid fa-ship"></i> Dive Boat Transfer</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">2 Tank Dives</span>
+              <span class="price-val">$95 <span>/ diver</span></span>
+            </div>
+            <button class="btn-primary" onclick="openAdvModal('Hikkaduwa Shipwreck Deep Dive', 95)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Hiking - Ella Rock & Adam's Peak -->
+      <div class="item-card" data-category="hiking" data-name="ella rock sunrise hike nine arch bridge trekking">
+        <div class="card-img-wrap">
+          <img src="images/ella-trek.jpg"
+            alt="Ella Rock Sunrise Hiking Trail" />
+          <div class="card-badge" style="background: #f59e0b;"><i class="fa-solid fa-sun"></i> Sunrise Magic</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (780)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Ella, Central Highlands</div>
+          <h3 class="card-title">Ella Rock & Nine Arch Bridge Sunrise Trek</h3>
+          <p class="card-desc">Scenic morning expedition through eucalyptus forests, railway tracks, and tea hills to Ella Rock summit, catching golden sunrise over Little Adam's Peak.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-clock"></i> 4 Hours</span>
+            <span class="amenity-tag"><i class="fa-solid fa-train"></i> Train Track Trail</span>
+            <span class="amenity-tag"><i class="fa-solid fa-mug-hot"></i> Fresh Ceylon Tea</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Per Explorer</span>
+              <span class="price-val">$30 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openAdvModal('Ella Rock Sunrise Trek & Nine Arch', 30)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Abseiling - Laxapana Falls -->
+      <div class="item-card" data-category="abseiling" data-name="laxapana waterfall 400ft extreme abseiling canyoning">
+        <div class="card-img-wrap">
+          <img src="images/laxapana-abseil.jpg"
+            alt="Laxapana Falls Extreme Waterfall Abseiling" />
+          <div class="card-badge" style="background: #e11d48;"><i class="fa-solid fa-skull-crossbones"></i> Extreme 400ft</div>
+          <div class="card-rating"><i class="fa-solid fa-star"></i> 5.0 (155)</div>
+        </div>
+        <div class="card-body">
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Laxapana Falls, Maskeliya</div>
+          <h3 class="card-title">Laxapana 400ft Mega Waterfall Abseil</h3>
+          <p class="card-desc">The ultimate high-altitude waterfall thrill in Sri Lanka. Multi-pitch abseiling down the sheer rock wall of the mighty Laxapana cascade with certified mountaineers.</p>
+          <div class="card-amenities">
+            <span class="amenity-tag"><i class="fa-solid fa-mountain"></i> 400ft Multi-Pitch</span>
+            <span class="amenity-tag"><i class="fa-solid fa-user-gear"></i> Lead Mountain Guides</span>
+            <span class="amenity-tag"><i class="fa-solid fa-shield-heart"></i> Comprehensive Insurance</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-price">
+              <span class="price-label">Extreme Pro</span>
+              <span class="price-val">$140 <span>/ person</span></span>
+            </div>
+            <button class="btn-primary" onclick="openAdvModal('Laxapana 400ft Mega Waterfall Abseil', 140)">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Reservation / Inquire Modal -->
+  <div class="modal-overlay" id="adv-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-adv-title">Book Adventure</h3>
+        <button class="close-modal" onclick="closeAdvModal()">&times;</button>
+      </div>
+
+      <form id="adv-booking-form" onsubmit="handleAdvSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Your Full Name</label>
+          <input type="text" class="form-control" placeholder="e.g. Johnathan Smith" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-control" placeholder="john@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">WhatsApp Number (For instant guide coordination)</label>
+          <input type="tel" class="form-control" placeholder="+1 234 567 8900" required />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div class="form-group">
+            <label class="form-label">Adventure Date</label>
+            <input type="date" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Participants</label>
+            <select class="form-control" required>
+              <option value="1">1 Person (Solo)</option>
+              <option value="2" selected>2 People (Couple/Pair)</option>
+              <option value="3-5">3 - 5 People (Group)</option>
+              <option value="6+">6+ People (Large Party)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary"
+          style="width: 100%; justify-content: center; padding: 13px; font-size: 15px; margin-top: 8px;">
+          Confirm Adventure Booking <i class="fa-solid fa-check"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       CINEMATIC TROPICAL LUXURY FOOTER (Inspired by Ceylon Tours)
+       ========================================================================== -->
+  <footer class="travel-footer" id="main-footer">
+
+    <!-- 1. CINEMATIC TROPICAL HERO PARALLAX BANNER -->
+    <div class="footer-hero-banner">
+      <div class="footer-hero-content">
+        <h2 class="footer-hero-title">Let us take you on a tropical adventure!</h2>
+        <a href="plan-trip.html" class="footer-hero-btn">
+          <span>Inquire Now</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. MAIN FOOTER CONTENT WITH VERTICAL DIVIDERS -->
+    <div class="footer-main-area">
+      <div class="travel-footer-container">
+        <div class="footer-grid-wrapper">
+
+          <!-- Column 1: Company Location & Contacts -->
+          <div class="footer-col">
+            <div class="footer-company-name">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>TravelGuide.lk (Pvt) Ltd,</span>
+            </div>
+            <p class="footer-address">
+              8A, Sir Ernest De Silva Mawatha,<br />
+              Colombo 7,<br />
+              Sri Lanka.
+            </p>
+
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+94112500611">(+94) 112 500 611 / (+94) 77 123 4567</a>
+            </div>
+
+            <div class="footer-contact-row">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@travelguide.lk">info@travelguide.lk</a>
+            </div>
+          </div>
+
+          <!-- Column 2: Navigation Links -->
+          <div class="footer-col">
+            <ul class="footer-nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="hotels.html">Island Life</a></li>
+              <li><a href="hotels.html">Destinations</a></li>
+              <li><a href="transport.html">Transport</a></li>
+              <li><a href="food.html">Ceylon Tales</a></li>
+              <li><a href="plan-trip.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Adventure & Outdoor Experiences -->
+          <div class="footer-col">
+            <ul class="footer-nav-list">
+              <li><a href="adventure.html" style="color: var(--ft-accent-cyan); font-weight: 700;">Adventure</a></li>
+              <li><a href="adventure.html?cat=diving">Diving</a></li>
+              <li><a href="adventure.html?cat=abseiling">Abseiling</a></li>
+              <li><a href="adventure.html?cat=paragliding">Paragliding</a></li>
+              <li><a href="adventure.html?cat=hiking">Hiking</a></li>
+              <li><a href="adventure.html?cat=rafting">Rafting</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter Subscription & Socials -->
+          <div class="footer-col">
+            <div class="footer-section-heading">Newsletter Subscription</div>
+            <p class="footer-newsletter-desc">
+              Get updates about new tours, travel tips, photo guides and more.
+            </p>
+
+            <form class="footer-inline-subscribe" onsubmit="handleNewsletterSubmit(event)">
+              <input type="email" class="footer-inline-input" placeholder="Your Email" required id="newsletter-email" />
+              <button type="submit" class="footer-inline-btn">
+                <span>Subscribe</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </form>
+
+            <div class="footer-follow-heading">Follow Us</div>
+            <div class="footer-social-circles">
+              <a href="#" class="footer-social-btn" title="Facebook" aria-label="Facebook"><i
+                  class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="footer-social-btn" title="Instagram" aria-label="Instagram"><i
+                  class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="footer-social-btn" title="YouTube" aria-label="YouTube"><i
+                  class="fa-brands fa-youtube"></i></a>
+              <a href="https://wa.me/94771234567" class="footer-social-btn" title="WhatsApp" aria-label="WhatsApp"><i
+                  class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. BOTTOM SUB-FOOTER COPYRIGHT BAR -->
+    <div class="footer-bottom-bar">
+      <div class="travel-footer-container footer-bottom-inner">
+        <div class="footer-copy-text">
+          All copyrights reserved by TravelGuide.lk &mdash; &copy; 2026
+        </div>
+
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="sep">|</span>
+          <a href="#">Terms & Conditions</a>
+          <span class="sep">|</span>
+          <a href="#">GDPR Compliance</a>
+          <span class="sep">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Feedback Notification -->
+  <div class="toast-msg" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toast-text">Notification</span>
+  </div>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.getElementById('nav-links');
+      links.classList.toggle('show');
+    }
+
+    let activeAdvCat = 'all';
+
+    function setAdvCategory(cat, btn) {
+      activeAdvCat = cat;
+      document.querySelectorAll('#adv-filters .filter-pill').forEach(b => b.classList.remove('active'));
+      if (btn) {
+        btn.classList.add('active');
+      } else {
+        const matchingBtn = Array.from(document.querySelectorAll('#adv-filters .filter-pill')).find(b => b.textContent.toLowerCase().includes(cat));
+        if (matchingBtn) matchingBtn.classList.add('active');
+      }
+      filterAdventures();
+    }
+
+    function filterAdventures() {
+      const search = (document.getElementById('adv-search').value || '').toLowerCase();
+      const cards = document.querySelectorAll('#adventure-grid .item-card');
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        const name = card.getAttribute('data-name') || '';
+        const matchesCat = (activeAdvCat === 'all' || cat === activeAdvCat);
+        const matchesSearch = name.includes(search);
+
+        if (matchesCat && matchesSearch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openAdvModal(title, price) {
+      document.getElementById('modal-adv-title').textContent = `Book: ${title} ($${price})`;
+      document.getElementById('adv-modal').classList.add('active');
+    }
+
+    function closeAdvModal() {
+      document.getElementById('adv-modal').classList.remove('active');
+    }
+
+    function handleAdvSubmit(e) {
+      e.preventDefault();
+      closeAdvModal();
+      showToast('🪂 Adventure expedition booked! Guide briefing and itinerary sent via WhatsApp & Email.');
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email').value;
+      if (email) {
+        showToast(`✨ Subscribed ${email} for exclusive adventure perks!`);
+        document.getElementById('newsletter-email').value = '';
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-text').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+
+    // Auto-detect URL query parameter ?cat=diving etc.
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const catParam = urlParams.get('cat');
+      if (catParam) {
+        setAdvCategory(catParam);
+      }
+    });
+  </script>
+</body>
+
+</html>
