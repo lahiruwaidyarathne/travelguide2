@@ -838,7 +838,7 @@ ul {
   max-width: 960px;
   margin: 0 auto 36px;
   background: white;
-  padding: 28px 36px;
+  padding: 26px 32px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   border-left: 4px solid var(--primary);
@@ -853,6 +853,11 @@ ul {
 
 .intro-text-box p:last-child {
   margin-bottom: 0;
+}
+
+.intro-text-box strong {
+  color: #0f172a;
+  font-weight: 700;
 }
 
 .gallery-grid {
@@ -937,7 +942,7 @@ ul {
     height: 200px;
   }
   .intro-text-box {
-    padding: 20px 18px;
+    padding: 20px 20px;
     font-size: 14px;
   }
 }
